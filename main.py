@@ -1,4 +1,5 @@
 import pandas  as pd
+import matplotlib.pyplot as plt
 
 # Local data
 df = pd.read_csv("jobs.csv")
@@ -26,3 +27,9 @@ print(skill_series.value_counts())
 # Average salary
 print("\n Average Salary:")
 print(df['salary'].mean())
+
+skill_series.value_counts().head(5).plot(kind='bar')
+plt.title("Top Skills in Demand")
+plt.xlabel("Skills")
+plt.ylabel("Number of Jobs")
+plt.show()
